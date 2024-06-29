@@ -146,7 +146,7 @@ id_entry.config(state=DISABLED) # Disable ID Entry
 def add_record():
     ID = id_entry.get()
     if ID:
-        messagebox.showwarning(title="Warning", message="Please click button Reset Record!")
+        messagebox.showwarning(title="Warning", message="Please Reset Record!")
     else:
         service_name = sn_entry.get()
         year = y_entry.get()
@@ -162,7 +162,7 @@ def add_record():
             reset_record()
             my_tree_view()
         else:
-            messagebox.showwarning(title="Warning", message="Please input data in Textbox!")
+            messagebox.showwarning(title="Warning", message="Please input data!")
 
 # Update Record
 def update_record():
@@ -186,7 +186,7 @@ def update_record():
         reset_record()
         my_tree_view()
     else:
-        messagebox.showwarning(title="Warning", message="Please select record on Treeview!")
+        messagebox.showwarning(title="Warning", message="Please select record!")
 
 # Selected Record
 def selected_record(e):
@@ -220,17 +220,17 @@ def selected_record(e):
 def delete_record():
     ID = id_entry.get()
     if ID:
-        msg = messagebox.askyesno(title="Confirm", message="Are you sure you want to delete this item?")
+        msg = messagebox.askyesno(title="Confirm", message="Are you sure delete this item?")
         if msg:
             delete_ma_list(ID)
-            messagebox.showinfo(title="Information", message="Update record Done!")
+            messagebox.showinfo(title="Information", message="Delete record Done!")
             reset_record()
             my_tree_view()
         else:
             reset_record()
             my_tree_view()
     else:
-        messagebox.showwarning(title="Warning", message="Please select record on Treeview!")
+        messagebox.showwarning(title="Warning", message="Please select record!")
 
 # Reset Record
 def reset_record():
